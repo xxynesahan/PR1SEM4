@@ -2,7 +2,7 @@
 
 void menu(DataBase& db, string role) {
     while (true) {
-        cout << "\nÌåíþ " << role << + "à:" << " \n1.Ïðîñìîòðåòü òåñòû\n2.Âûéòè\nÂûáåðèòå: ";
+        cout << "\nÃŒÃ¥Ã­Ã¾ " << role << + "Ã :" << " \n1.ÃÃ°Ã®Ã±Ã¬Ã®Ã²Ã°Ã¥Ã²Ã¼ Ã²Ã¥Ã±Ã²Ã»\n2.Ã‚Ã»Ã©Ã²Ã¨\nÃ‚Ã»Ã¡Ã¥Ã°Ã¨Ã²Ã¥: ";
         int choice;
         cin >> choice;
         if (choice == 1) {
@@ -21,36 +21,36 @@ int main() {
     SetConsoleOutputCP(1251);
     DataBase db;
     while (true) {
-        cout << "1. Âîéòè\n2. Çàðåãèñòðèðîâàòüñÿ\n3. Âûéòè\nÂûáåðèòå: ";
+        cout << "1. Ã‚Ã®Ã©Ã²Ã¨\n2. Ã‡Ã Ã°Ã¥Ã£Ã¨Ã±Ã²Ã°Ã¨Ã°Ã®Ã¢Ã Ã²Ã¼Ã±Ã¿\n3. Ã‚Ã»Ã©Ã²Ã¨\nÃ‚Ã»Ã¡Ã¥Ã°Ã¨Ã²Ã¥: ";
         int choice;
         cin >> choice;
         if (choice == 3)
             break;
 
         string username, password, role;
-        cout << "Èìÿ: ";
+        cout << "ÃˆÃ¬Ã¿: ";
         cin >> username;
-        cout << "Ïàðîëü: ";
+        cout << "ÃÃ Ã°Ã®Ã«Ã¼: ";
         cin >> password;
 
         if (choice == 1) {
             role = db.getRole(username, password);
             if (!role.empty()) {
-                cout << "Äîáðî ïîæàëîâàòü, " << username << " (" << role << ").\n";
+                cout << "Ã„Ã®Ã¡Ã°Ã® Ã¯Ã®Ã¦Ã Ã«Ã®Ã¢Ã Ã²Ã¼, " << username << " (" << role << ").\n";
                 menu(db, role);
             }
             else {
-                cout << "Îøèáêà\n";
+                cout << "ÃŽÃ¸Ã¨Ã¡ÃªÃ \n";
             }
         }
         else if (choice == 2) {
-            cout << "Êåì ÿâëÿåòñÿ? (ñîòðóäíèê/êëèåíò/îõðàííèê): ";
+            cout << "ÃŠÃ¥Ã¬ Ã¿Ã¢Ã«Ã¿Ã¥Ã²Ã±Ã¿? (Ã±Ã®Ã²Ã°Ã³Ã¤Ã­Ã¨Ãª/ÃªÃ«Ã¨Ã¥Ã­Ã²/Ã®ÃµÃ°Ã Ã­Ã­Ã¨Ãª): ";
             cin >> role;
             if (db.addUser(username, password, role)) {
-                cout << "Âû çàðåãèñòðèðîâàíû.\n";
+                cout << "Ã‚Ã» Ã§Ã Ã°Ã¥Ã£Ã¨Ã±Ã²Ã°Ã¨Ã°Ã®Ã¢Ã Ã­Ã».\n";
             }
             else {
-                cout << "Ýòîò ïîëüçîâàòåëü óæå çàðåãèñòðèðîâàí.\n";
+                cout << "ÃÃ²Ã®Ã² Ã¯Ã®Ã«Ã¼Ã§Ã®Ã¢Ã Ã²Ã¥Ã«Ã¼ Ã³Ã¦Ã¥ Ã§Ã Ã°Ã¥Ã£Ã¨Ã±Ã²Ã°Ã¨Ã°Ã®Ã¢Ã Ã­.\n";
             }
         }
     }
