@@ -7,7 +7,6 @@ using namespace std;
 struct User { string username, password, role;};
 struct Test { string name, description, role;};
 
-// База данных пользователей
 class DataBase {
     vector<User> users;
     vector<Test> tests;;
@@ -17,4 +16,5 @@ public:
     bool addUser(string username, string password, string role);
     string getRole(string username, string password);
     vector<Test> getTest(string role);
+    bool removeUser(string username);
 };
