@@ -1,32 +1,36 @@
 #include "header.h"
 
 DataBase::DataBase() {
-    users.push_back({ "Şëèàíà", "123y", "ñîòğóäíèê" });
-    users.push_back({ "Êàğèíà", "kar2006", "êëèåíò" });
-    users.push_back({ "Âëàäèìèğ", "vova1", "îõğàííèê" });
+    users.push_back({ "Ğ®Ğ»Ğ¸Ğ°Ğ½Ğ°", "123", "ÑĞ¾Ñ‚Ñ€ÑƒĞ´Ğ½Ğ¸Ğº" });
+    users.push_back({ "Ğ’Ğ»Ğ°Ğ´Ğ¸Ğ¼Ğ¸Ñ€", "45", "Ğ¾Ñ…Ñ€Ğ°Ğ½Ğ½Ğ¸Ğº" });
 
-    tests.push_back({ "Ôèøèíã", "Êàê íå ïîïàñòüñÿ íà ìîøåííèêîâ", "ñîòğóäíèê" });
-    tests.push_back({ "Çàùèòà äåíåã", "Êàê íå ïîòåğÿòü ñâîè äåíüãè", "êëèåíò" });
-    tests.push_back({ "Îõğàíà", "×òî äåëàòü ïğè òğåâîãå", "îõğàííèê" });
-    tests.push_back({ "Ïàğîëè", "Êàê ïğèäóìàòü õîğîøèé ïàğîëü", "ñîòğóäíèê" });
-    tests.push_back({ "Ïåğåâîäû", "Êàê îòïğàâëÿòü äåíüãè áåçîïàñíî", "êëèåíò" });
-    tests.push_back({ "Äîêóìåíòû", "Êàê ïğîâåğÿòü ïàñïîğòà è ïğîïóñêà", "îõğàííèê" });
-    tests.push_back({ "Îáìàí", "Êàê ğàñïîçíàòü õèòğûå óëîâêè", "ñîòğóäíèê" });
-    tests.push_back({ "Áàíêîìàòû", "Êàê ïğàâèëüíî ñíèìàòü äåíüãè", "êëèåíò" });
-    tests.push_back({ "Êàìåğû", "Êàê ñëåäèòü çà ïîğÿäêîì", "îõğàííèê" });
+    tests.push_back({ "Ğ¤Ğ¸ÑˆĞ¸Ğ½Ğ³", "ĞšĞ°Ğº Ğ½Ğµ Ğ¿Ğ¾Ğ¿Ğ°ÑÑ‚ÑŒÑÑ Ğ½Ğ° Ğ¼Ğ¾ÑˆĞµĞ½Ğ½Ğ¸ĞºĞ¾Ğ²", "ÑĞ¾Ñ‚Ñ€ÑƒĞ´Ğ½Ğ¸Ğº" });
+    tests.push_back({ "ĞÑ…Ñ€Ğ°Ğ½Ğ°", "Ğ§Ñ‚Ğ¾ Ğ´ĞµĞ»Ğ°Ñ‚ÑŒ Ğ¿Ñ€Ğ¸ Ñ‚Ñ€ĞµĞ²Ğ¾Ğ³Ğµ", "Ğ¾Ñ…Ñ€Ğ°Ğ½Ğ½Ğ¸Ğº" });
+    tests.push_back({ "ĞŸĞ°Ñ€Ğ¾Ğ»Ğ¸", "ĞšĞ°Ğº Ğ¿Ñ€Ğ¸Ğ´ÑƒĞ¼Ğ°Ñ‚ÑŒ Ñ…Ğ¾Ñ€Ğ¾ÑˆĞ¸Ğ¹ Ğ¿Ğ°Ñ€Ğ¾Ğ»ÑŒ", "ÑĞ¾Ñ‚Ñ€ÑƒĞ´Ğ½Ğ¸Ğº" });
+    tests.push_back({ "Ğ”Ğ¾ĞºÑƒĞ¼ĞµĞ½Ñ‚Ñ‹", "ĞšĞ°Ğº Ğ¿Ñ€Ğ¾Ğ²ĞµÑ€ÑÑ‚ÑŒ Ğ¿Ğ°ÑĞ¿Ğ¾Ñ€Ñ‚Ğ° Ğ¸ Ğ¿Ñ€Ğ¾Ğ¿ÑƒÑĞºĞ°", "Ğ¾Ñ…Ñ€Ğ°Ğ½Ğ½Ğ¸Ğº" });
+    tests.push_back({ "ĞĞ±Ğ¼Ğ°Ğ½", "ĞšĞ°Ğº Ñ€Ğ°ÑĞ¿Ğ¾Ğ·Ğ½Ğ°Ñ‚ÑŒ Ñ…Ğ¸Ñ‚Ñ€Ñ‹Ğµ ÑƒĞ»Ğ¾Ğ²ĞºĞ¸", "ÑĞ¾Ñ‚Ñ€ÑƒĞ´Ğ½Ğ¸Ğº" });
+    tests.push_back({ "ĞšĞ°Ğ¼ĞµÑ€Ñ‹", "ĞšĞ°Ğº ÑĞ»ĞµĞ´Ğ¸Ñ‚ÑŒ Ğ·Ğ° Ğ¿Ğ¾Ñ€ÑĞ´ĞºĞ¾Ğ¼", "Ğ¾Ñ…Ñ€Ğ°Ğ½Ğ½Ğ¸Ğº" });
 }
 
 bool DataBase::addUser(string username, string password, string role) {
-    // Ïğîâåğÿåì, åñòü ëè óæå òàêîé ïîëüçîâàòåëü
     for (const auto& user : users) {
         if (user.username == username) {
             return false;
         }
     }
 
-    // Äîáàâëÿåì íîâîãî ïîëüçîâàòåëÿ
     users.push_back({ username, password, role });
     return true;
+}
+
+bool DataBase::removeUser(string username) {
+    for (auto it = users.begin(); it != users.end(); ++it) {
+        if (it->username == username) {
+            users.erase(it);
+            return true;
+        }
+    }
+    return false;
 }
 
 string DataBase::getRole(string username, string password) {
