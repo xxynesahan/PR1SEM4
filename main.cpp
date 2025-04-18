@@ -1,57 +1,53 @@
 #include "header.h"
 
-void menu(DataBase& db, string role) {
-    while (true) {
-        cout << "\nÌåíþ " << role << + "à:" << " \n1.Ïðîñìîòðåòü òåñòû\n2.Âûéòè\nÂûáåðèòå: ";
-        int choice;
-        cin >> choice;
-        if (choice == 1) {
-            auto tests = db.getTest(role);
-            for (auto& i : tests) {
-                cout << " " << i.name << ": " << i.description << endl;
-            }
-        }
-        else if (choice == 2)
-            break;
-    }
+DataBase::DataBase() {
+    users.push_back({ "Юлиана", "123", "сотрудник" });
+    users.push_back({ "Владимир", "45", "охранник" });
+
+    tests.push_back({ "Фишинг", "Как не попасться на мошенников", "сотрудник" });
+    tests.push_back({ "Охрана", "Что делать при тревоге", "охранник" });
+    tests.push_back({ "Пароли", "Как придумать хороший пароль", "сотрудник" });
+    tests.push_back({ "Документы", "Как проверять паспорта и пропуска", "охранник" });
+    tests.push_back({ "Обман", "Как распознать хитрые уловки", "сотрудник" });
+    tests.push_back({ "Камеры", "Как следить за порядком", "охранник" });
 }
 
-int main() {
-    SetConsoleCP(1251);
-    SetConsoleOutputCP(1251);
-    DataBase db;
-    while (true) {
-        cout << "1. Âîéòè\n2. Çàðåãèñòðèðîâàòüñÿ\n3. Âûéòè\nÂûáåðèòå: ";
-        int choice;
-        cin >> choice;
-        if (choice == 3)
-            break;
-
-        string username, password, role;
-        cout << "Èìÿ: ";
-        cin >> username;
-        cout << "Ïàðîëü: ";
-        cin >> password;
-
-        if (choice == 1) {
-            role = db.getRole(username, password);
-            if (!role.empty()) {
-                cout << "Äîáðî ïîæàëîâàòü, " << username << " (" << role << ").\n";
-                menu(db, role);
-            }
-            else {
-                cout << "Îøèáêà\n";
-            }
-        }
-        else if (choice == 2) {
-            cout << "Êåì ÿâëÿåòñÿ? (ñîòðóäíèê/êëèåíò/îõðàííèê): ";
-            cin >> role;
-            if (db.addUser(username, password, role)) {
-                cout << "Âû çàðåãèñòðèðîâàíû.\n";
-            }
-            else {
-                cout << "Ýòîò ïîëüçîâàòåëü óæå çàðåãèñòðèðîâàí.\n";
-            }
+bool DataBase::addUser(string username, string password, string role) {
+    for (const auto& user : users) {
+        if (user.username == username) {
+            return false;
         }
     }
+
+    users.push_back({ username, password, role });
+    return true;
+}
+
+bool DataBase::removeUser(string username) {
+    for (auto it = users.begin(); it != users.end(); ++it) {
+        if (it->username == username) {
+            users.erase(it);
+            return true;
+        }
+    }
+    return false;
+}
+
+string DataBase::getRole(string username, string password) {
+    for (const auto& user : users) {
+        if (user.username == username && user.password == password) {
+            return user.role;
+        }
+    }
+    return "";
+}
+
+vector<Test> DataBase::getTest(string role) {
+    vector<Test> result;
+    for (const auto& test : tests) {
+        if (test.role == role) {
+            result.push_back(test);
+        }
+    }
+    return result;
 }
