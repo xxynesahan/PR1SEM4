@@ -1,0 +1,5 @@
+Юлиана;123;director;1
+Карина;456;security;0
+Вова;789;manager;1
+Влад;1;manager;0
+Иван;5;manager;1
